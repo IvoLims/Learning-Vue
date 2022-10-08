@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Dynamic Styling</h1>
+    </header>
+    <section id="styling">
+      <!-- The same as <div class="demo" :style="border-color: red;" @click="boxHighlight('A')"></div> -->
+      <!-- Will create dynamism shouldn't hardcode colors and stuff
+        <div
+        class="demo"
+        :style="{borderColor:box1Select ? 'red' : '#ccc'}"
+        @click="boxHighlight('A')"
+      ></div> -->
+      <!-- It does the same as the one below but the below uses computed 
+        <div
+        :class="{demo:true, active:box1Select}"
+        @click="boxHighlight('A')"
+      ></div> -->
+      <div class="demo" :class="boxAClasses" @click="boxHighlight('A')"></div>
+      <div
+        :class="['demo', {active:box2Select}]"
+        @click="boxHighlight('B')"
+      ></div>
+      <div
+        :class="{demo:true, active:box3Select}"
+        @click="boxHighlight('C')"
+      ></div>
+    </section>
+  </body>
+</html>
